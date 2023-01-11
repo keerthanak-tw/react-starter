@@ -1,10 +1,14 @@
-.meal {
+.meal-item {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     margin: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal {
+    flex-direction: column;
 }
 
 .meal h3 {
