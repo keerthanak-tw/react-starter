@@ -14,7 +14,7 @@ function App() {
     <div className="app">
       <h1>Hi there!</h1>
       {/* {showParagaph && <p>This is new!</p>} */}
-      <DemoOutput show={showParagraph} />
+      <DemoOutput show={false} />
       <Button onClick={toggleParagraph}>Toggle Paragraph</Button>
     </div>
   );
