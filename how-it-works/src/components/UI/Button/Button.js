@@ -3,6 +3,7 @@ import React from 'react';
 import classes from './Button.module.css';
 
 const Button = (props) => {
+  console.log('Button running');
   return (
     <button
       type={props.type || 'button'}
@@ -15,4 +16,5 @@ const Button = (props) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);
+// No effect even if wrapped with React.memo as the props like onClick handlers are re-evaluated at parent
