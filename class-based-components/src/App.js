@@ -1,11 +1,7 @@
-import Users from './components/Users';
+import UserFinder from "./components/UserFinder";
 
 function App() {
-  return (
-    <div>
-      <Users />
-    </div>
-  );
+  return <UserFinder />;
 }
 
 export default App;
