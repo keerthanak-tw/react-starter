@@ -44,26 +44,51 @@ const Checkout = (props) => {
     if (!formIsValid) {
       return;
     }
+
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostal,
+    });
   };
 
   return (
     <form className={classes.form} onSubmit={confirmHandler}>
-      <div className={`${classes.control} ${!formValidity.name && classes.invalid}`}>
+      <div
+        className={`${classes.control} ${
+          !formValidity.name && classes.invalid
+        }`}
+      >
         <label htmlFor="name">Your Name</label>
         <input type="text" id="name" ref={nameRef} />
         {!formValidity.name && <p> Please enter a valid name</p>}
       </div>
-      <div className={`${classes.control} ${!formValidity.street && classes.invalid}`}>
+      <div
+        className={`${classes.control} ${
+          !formValidity.street && classes.invalid
+        }`}
+      >
         <label htmlFor="street">Street</label>
         <input type="text" id="street" ref={streetRef} />
         {!formValidity.street && <p> Please enter a valid street</p>}
       </div>
-      <div className={`${classes.control} ${!formValidity.postalCode && classes.invalid}`}>
+      <div
+        className={`${classes.control} ${
+          !formValidity.postalCode && classes.invalid
+        }`}
+      >
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalRef} />
-        {!formValidity.postalCode && <p> Please enter a valid postal code (5 characters long)</p>}
+        {!formValidity.postalCode && (
+          <p> Please enter a valid postal code (5 characters long)</p>
+        )}
       </div>
-      <div className={`${classes.control} ${!formValidity.city && classes.invalid}`}>
+      <div
+        className={`${classes.control} ${
+          !formValidity.city && classes.invalid
+        }`}
+      >
         <label htmlFor="city">City</label>
         <input type="text" id="city" ref={cityRef} />
         {!formValidity.city && <p> Please enter a valid city</p>}
