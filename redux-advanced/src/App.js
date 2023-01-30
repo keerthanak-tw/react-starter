@@ -6,6 +6,8 @@ import Products from "./components/Shop/Products";
 import { uiActions } from "./store/ui";
 import Notification from "./components/UI/Notification";
 
+let isInitial = true;
+
 function App() {
   const dispatch = useDispatch();
   const showCart = useSelector((state) => state.ui.showCart);
@@ -42,6 +44,11 @@ function App() {
       );
     };
 
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+    
     sendCartData().catch(() => {
       dispatch(
         uiActions.showNotification({
