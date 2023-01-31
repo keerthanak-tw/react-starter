@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+
 function HomePage() {
+  // const navigate = useNavigate(); can be used to navigate programatically
+  // navigate('/products');
+
   return (
     <>
       <h1>My Home Page</h1>
