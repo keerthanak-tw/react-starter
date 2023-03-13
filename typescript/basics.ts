@@ -6,3 +6,13 @@
 let age: number = 23;
 let userName: string = 'KK';
 let isInstructor: boolean = true;
+
+// Complex types
+let hobbies: Array<string>; // or string[]
+let person: {
+    name: string;
+    age: number;
+} = {
+    name: userName,
+    age,
+}
