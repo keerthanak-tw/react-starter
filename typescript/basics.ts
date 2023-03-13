@@ -16,3 +16,7 @@ let person: {
     name: userName,
     age,
 }
+
+// Type inference
+let course = 'React + TypeScript';
+// course = 12341; ERRORRRR!
