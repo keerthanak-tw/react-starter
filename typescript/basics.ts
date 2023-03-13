@@ -20,3 +20,6 @@ let person: {
 // Type inference
 let course = 'React + TypeScript';
 // course = 12341; ERRORRRR!
+
+let project : string | number = 'Project name';
+project = 123; // No error as type is union
