@@ -39,3 +39,14 @@ const printOutput = (value: any): void => {
 }
 // void is only used as types for return value of funtions that doesnt return anything
 
+// Generics
+
+// flexible types and ensure type safety
+const insertAtBeginning = <T>(array: T[], value: T) => {
+    const newArray = [value, ...array]
+    return newArray;
+}
+
+const demoArray = [1,2,3];
+const updatedArray = insertAtBeginning(demoArray, -1);
+const stringArray = insertAtBeginning(['a', 'b', 'c'], 'd');
