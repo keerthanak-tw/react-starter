@@ -27,3 +27,15 @@ let course = 'React + TypeScript';
 
 let project : string | number = 'Project name';
 project = 123; // No error as type is union
+
+// Functions and types
+const addedResult = (a: number, b: number): number => {
+    return a + b;
+}
+// return type inferred and is not required to be specified in simple cases
+
+const printOutput = (value: any): void => {
+    console.log(value);
+}
+// void is only used as types for return value of funtions that doesnt return anything
+
