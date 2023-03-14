@@ -8,15 +8,19 @@ let userName: string = 'KK';
 let isInstructor: boolean = true;
 
 // Complex types
-let hobbies: Array<string>; // or string[]
-let person: {
+type Person = {
     name: string;
     age: number;
-} = {
+}
+let hobbies: Array<string>; // or string[]
+let person: Person = {
     name: userName,
     age,
 }
-
+const people: Person[] = [
+    { name: 'KK', age: 24 },
+    { name: 'JK', age: 23 },
+]
 // Type inference
 let course = 'React + TypeScript';
 // course = 12341; ERRORRRR!
