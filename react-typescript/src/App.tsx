@@ -1,28 +1,14 @@
-import { useState } from 'react';
 import './App.css';
 import NewTodo from './components/NewTodo';
 import Todos from './components/Todos';
-import Todo from './models/todo';
+import TodosContextProvider from './store/todos-context';
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>([
-    new Todo('Learn React'),
-    new Todo('Learn TS'),
-    new Todo('End day'),
-  ]);
-  const addTodoHandler = (text: string) => {
-    setTodos((prevState) => [...prevState, new Todo(text)]);
-  }
-
-  const removeTodoHandler = (id: string) => {
-    setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
-  }
-
   return (
-    <div>
-      <NewTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} onTodoClick={removeTodoHandler} />
-    </div>
+    <TodosContextProvider>
+      <NewTodo />
+      <Todos />
+    </TodosContextProvider>
   );
 }
 
