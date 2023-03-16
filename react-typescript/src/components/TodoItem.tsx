@@ -1,8 +1,8 @@
 import styles from './TodoItem.module.css';
 
-const TodoItem: React.FC<{text: string}> = (props) => {
+const TodoItem: React.FC<{text: string; onTodoClick: () => void}> = (props) => {
   return (
-        <li className={styles.item}>{props.text}</li>
+        <li className={styles.item} onClick={props.onTodoClick}>{props.text}</li>
   );
 };
 

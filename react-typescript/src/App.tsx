@@ -14,10 +14,14 @@ function App() {
     setTodos((prevState) => [...prevState, new Todo(text)]);
   }
 
+  const removeTodoHandler = (id: string) => {
+    setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+  }
+
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} />
+      <Todos items={todos} onTodoClick={removeTodoHandler} />
     </div>
   );
 }
